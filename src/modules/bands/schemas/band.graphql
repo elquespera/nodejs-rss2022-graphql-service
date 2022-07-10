@@ -1,0 +1,11 @@
+#type Member: String
+
+type Band {
+    id: ID!
+    name: String
+    origin: String
+    #members: [Member]
+    members: [String]
+    website: String
+    genres: [Genre]
+}
