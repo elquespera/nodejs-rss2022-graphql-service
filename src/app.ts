@@ -2,6 +2,9 @@ import { ApolloServer, gql } from 'apollo-server';
 
 import loadSchemas from './schemaLoader.js';
 
+import 'dotenv/config';
+import 'dotenv';
+
 
 // const typeDefs = gql`
 //   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
@@ -20,16 +23,16 @@ import loadSchemas from './schemaLoader.js';
 //   }
 // `;
 
-const books = [
-    {
-      title: 'The Awakening',
-      author: 'Kate Chopin',
-    },
-    {
-      title: 'City of Glass',
-      author: 'Paul Auster',
-    },
-  ];
+// const books = [
+//     {
+//       title: 'The Awakening',
+//       author: 'Kate Chopin',
+//     },
+//     {
+//       title: 'City of Glass',
+//       author: 'Paul Auster',
+//     },
+//   ];
 
 const jwt = 
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmNhY2JmZjg0MDkyYjMxN2IwYTg2ZGQiLCJmaXJzdE5hbWUiOiJQIiwibGFzdE5hbWUiOiJHIiwiZW1haWwiOiJ0cnlAZ21haWwuY29tIiwiaWF0IjoxNjU3NDU3NzMwfQ.RrZWj_PPtz-yOxLJYJYkDZmo1clAPFcvdSBTe77WTbk";
@@ -52,7 +55,9 @@ const startServer = async () => {
     cache: 'bounded',
   });
 
-  const { url } = await server.listen();
+  const port = process.env.PORT || 4000;
+
+  const { url } = await server.listen({ port: port });
   console.log(`🚀 Server ready at ${url}`);
 
   return url;
