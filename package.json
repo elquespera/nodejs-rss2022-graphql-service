@@ -1,0 +1,39 @@
+{
+  "name": "5-graphql-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./src/app.ts",
+    "start:dev": "nodemon ./src/app.ts",
+    "start:build": "tsc && node ./dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elquespera/nodejs-rss2022-graphql-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elquespera/nodejs-rss2022-graphql-service/issues"
+  },
+  "homepage": "https://github.com/elquespera/nodejs-rss2022-graphql-service#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "nodemon": "^2.0.18",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^7.4.0",
+    "@graphql-tools/load": "^7.7.0",
+    "apollo-datasource-rest": "^3.6.1",
+    "apollo-server": "^3.9.0",
+    "dotenv": "^16.0.1",
+    "graphql": "^16.5.0"
+  }
+}
